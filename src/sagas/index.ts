@@ -4,8 +4,8 @@ import { watcherGetAllRequest, watcherGetItemRequest, watcherPostCommentRequest 
 export function* rootSaga() {
 
   yield all([
-    watcherGetAllRequest,
-    watcherGetItemRequest,
-    watcherPostCommentRequest,
+    watcherGetAllRequest(),
+    watcherGetItemRequest(),
+    watcherPostCommentRequest(),
   ])
 }

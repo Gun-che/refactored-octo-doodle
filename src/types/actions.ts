@@ -13,6 +13,7 @@ export interface ICommentBody {
 export interface IHomeDataItemRequest extends IAction {
   payload: { id: number };
 }
+
 export interface IHomePostRequest extends IAction {
   payload: ICommentBody;
 }

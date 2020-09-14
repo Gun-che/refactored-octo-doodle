@@ -4,7 +4,7 @@ import * as A from '../actions/home';
 
 export const initState: IStateItem = {
   isFetching: false,
-  data: [],
+  data: { id: 0, url: '', comments: [] },
   message: '',
 }
 

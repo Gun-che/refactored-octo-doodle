@@ -1,3 +1,4 @@
+import { IRawResponse, IResponseOne } from './../types/response';
 import { IAction, IHomeDataItemRequest, IHomePostRequest } from './../types/actions';
 import {
   put,
@@ -11,11 +12,11 @@ import { IResponse } from '../types/response';
 export function* handlerGetAllRequest(action: IAction) {
 
   try {
-    const response: IResponse = yield apply(api, api.getAll, [])
-
+    const response: IRawResponse = yield apply(api, api.getAll, [])
+    console.log('!!!!!')
     yield put({
       type: A.HOME_DATA_SUCCESS,
-      payload: response,
+      payload: response.data,
     })
 
   } catch (e) {
@@ -30,7 +31,7 @@ export function* handlerGetAllRequest(action: IAction) {
 export function* handlerGetItemRequest(action: IHomeDataItemRequest) {
 
   try {
-    const response: IResponse = yield apply(api, api.get, [action.payload.id])
+    const response: IResponseOne = yield apply(api, api.get, [action.payload.id])
 
     yield put({
       type: A.HOME_DATA_ITEM_SUCCESS,
@@ -53,7 +54,7 @@ export function* handlerPostCommentRequest(action: IHomePostRequest) {
 
     const { id, name, comment } = action.payload;
 
-    const response: IResponse = yield apply(api, api.post, [{ id, name, comment }])
+    const response: any = yield apply(api, api.post, [{ id, name, comment }])
 
     yield put({
       type: A.HOME_POST_SUCCESS,

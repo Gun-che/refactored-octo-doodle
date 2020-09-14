@@ -12,7 +12,7 @@ export interface IStoreState {
 
 export type IStateItem = {
   isFetching: boolean;
-  data: IResponseOne[];
+  data: IResponseOne;
   message: string;
 }
 
