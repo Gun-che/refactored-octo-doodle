@@ -5,14 +5,22 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import HomePageContainer from './containers/HomePageContainer';
 
 import './App.scss';
-import HomePageContainer from './containers/HomePageContainer';
+import { LoadingConst } from './components/Loading';
+
+const Home = loadable(() => import('./containers/HomePageContainer'), {
+  fallback: LoadingConst,
+});
 
 export function App() {
   return (
     <div className="App">
-      <HomePageContainer />
+
+      <Switch>
+        <Route path={process.env.PUBLIC_URL + '/'} component={Home} />
+      </Switch>
     </div>
   );
 }

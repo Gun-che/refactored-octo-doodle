@@ -1,4 +1,5 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 import { HomePagePropsFromRedux } from '../../containers/HomePageContainer'
 
 import s from './index.module.scss'
@@ -8,16 +9,17 @@ export const HomePage: React.FC<HomePagePropsFromRedux> = ({
   isFetching,
   message,
   getData,
+  getItem,
+  postComment,
+  current,
 }) => {
   return (
     <div className={s.wrap}>
-      {data.map((i: string) => {
-        return (
-          <div key={i} className={s.item}>
-            {i}
-          </div>
-        )
-      })}
+      <Switch>
+        <Route path={process.env.PUBLIC_URL + '/'} exact component={Main} />
+        <Route path={process.env.PUBLIC_URL + '/:number'} component={Item} />
+      </Switch>
     </div>
   )
 }
+

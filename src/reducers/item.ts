@@ -1,35 +1,35 @@
 import { IAction } from './../types/actions';
-import { IState } from './../types/state';
+import { IStateItem } from './../types/state';
 import * as A from '../actions/home';
 
-export const initState: IState = {
+export const initState: IStateItem = {
   isFetching: false,
   data: [],
   message: '',
 }
 
-export function homeRedducer(
-  state: IState = initState,
+export function itemReducer(
+  state: IStateItem = initState,
   action: IAction
-) {
+): IStateItem {
 
   switch (action.type) {
-    case A.HOME_DATA_REQUEST:
+
+    case A.HOME_DATA_ITEM_REQUEST:
       return {
         ...state,
         isFetching: true,
         message: '',
       }
 
-    case A.HOME_DATA_SUCCESS:
+    case A.HOME_DATA_ITEM_SUCCESS:
       return {
         ...state,
         isFetching: false,
-        message: '',
         data: action.payload,
       }
 
-    case A.HOME_DATA_FAILURE:
+    case A.HOME_DATA_ITEM_REQUEST:
       return {
         ...state,
         isFetching: false,

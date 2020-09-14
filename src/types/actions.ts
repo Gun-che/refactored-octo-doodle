@@ -4,9 +4,16 @@ export interface IAction {
   payload?: any;
 }
 
-export type IHomeDataRequestArgs = string[];
+export interface ICommentBody {
+  id: number;
+  name: string;
+  comment: string;
+}
 
-export interface IHomeDataRequest extends IAction {
-  payload: IHomeDataRequestArgs;
+export interface IHomeDataItemRequest extends IAction {
+  payload: { id: number };
+}
+export interface IHomePostRequest extends IAction {
+  payload: ICommentBody;
 }
 
