@@ -4,7 +4,7 @@ import * as A from '../actions/home';
 
 export const initState: IState = {
   isFetching: false,
-  data: ['none'],
+  data: [],
   message: '',
 }
 

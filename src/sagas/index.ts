@@ -1,9 +1,11 @@
 import { all } from 'redux-saga/effects'
-import { watcherGetAllRequest } from './home'
+import { watcherGetAllRequest, watcherGetItemRequest, watcherPostCommentRequest } from './home'
 
 export function* rootSaga() {
 
   yield all([
-    watcherGetAllRequest,
+    watcherGetAllRequest(),
+    watcherGetItemRequest(),
+    watcherPostCommentRequest(),
   ])
 }
