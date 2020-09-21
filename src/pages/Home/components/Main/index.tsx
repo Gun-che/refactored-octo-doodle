@@ -20,13 +20,13 @@ export const Main: React.FC<IProps> = ({
 
   React.useEffect(() => {
     getData()
-  }, [data.length])
+  }, [data.length, getData])
 
   const tmp = () => {
     return isFetching ? <LoadingThin /> :
       data.map((i) => {
         return (
-          <div key={i.id}>
+          <div key={i.id} className={s.img}>
             <Link to={process.env.PUBLIC_URL + `/${i.id}`}>
               <img src={i.url} alt='' />
             </Link>

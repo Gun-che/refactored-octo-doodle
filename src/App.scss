@@ -1,38 +1,88 @@
-.App {
+@import "./sass/consts";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+.p-1 {
+  padding: 0 1rem !important;
+}
+
+button {
+  padding: 8px 20px;
+  border: none;
+  font-size: large;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.containerCust {
+  max-width: 1040px;
+  padding: 40px;
+  margin: auto;
+}
+
+.input-field input[type="text"]:focus + label {
+  color: #90caf9;
+}
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid #90caf9;
+  box-shadow: 0 1px 0 0 #90caf9;
+}
+
+.input-field .prefix.active {
+  color: #90caf9;
+}
+
+.input-field input[type="text"].valid {
+  border-bottom: 1px solid #90caf9;
+  box-shadow: 0 1px 0 0 #90caf9;
+}
+
+.input-field input[type="text"].invalid {
+  border-bottom: 1px solid #90caf9;
+  box-shadow: 0 1px 0 0 #90caf9;
+}
+
+button.btn {
+  border-radius: 12px;
+}
+
+.input-field input {
+  border-radius: 12px;
+}
+
+h2 {
+  font-size: 22px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.animEl {
+  animation: fadeInContent 0.4s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.containerCust {
+  animation: fadeInContentLight 0.4s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes fadeInContent {
   from {
-    transform: rotate(0deg);
+    margin-top: 2vh;
+    filter: blur(2px);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@keyframes fadeInContentLight {
+  from {
+    filter: blur(2px);
+    opacity: 0;
+  }
+}
+
+@media all and (max-width: 600px) {
+  h2 {
+    font-size: 20px;
   }
 }

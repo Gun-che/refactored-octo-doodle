@@ -8,10 +8,15 @@ export interface IRawResponse { data: IResponseItem[]; }
 export type IResponse = IResponseItem[]
 
 export interface IResponseOne {
-  id: number,
+  data: IResponseData,
+  status: number
+}
+
+export interface IResponseData {
+  id: string,
   url: string,
   comments: {
-    id: number,
+    id: string,
     text: string,
     date: number
   }[]

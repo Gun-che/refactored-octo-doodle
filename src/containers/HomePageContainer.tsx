@@ -15,7 +15,7 @@ const mapStateToProps = (state: IStore) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
   getData: () => dispatch(createHomeDataRequest()),
-  getItem: (id: number) => dispatch(createHomeDataItemRequest({ id })),
+  getItem: (id: string) => dispatch(createHomeDataItemRequest({ id })),
   postComment: (options: ICommentBody) => dispatch(createHomePostDataRequest(options)),
 })
 

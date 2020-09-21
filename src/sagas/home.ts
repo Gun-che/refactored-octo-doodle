@@ -7,7 +7,6 @@ import {
 } from 'redux-saga/effects'
 import * as A from '../actions/home'
 import { api } from '../utils/api'
-import { IResponse } from '../types/response';
 
 export function* handlerGetAllRequest(action: IAction) {
 
@@ -35,7 +34,7 @@ export function* handlerGetItemRequest(action: IHomeDataItemRequest) {
 
     yield put({
       type: A.HOME_DATA_ITEM_SUCCESS,
-      payload: response,
+      payload: response.data,
     })
 
   } catch (e) {

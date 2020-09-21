@@ -5,13 +5,13 @@ export interface IAction {
 }
 
 export interface ICommentBody {
-  id: number;
+  id: string;
   name: string;
   comment: string;
 }
 
 export interface IHomeDataItemRequest extends IAction {
-  payload: { id: number };
+  payload: { id: string };
 }
 
 export interface IHomePostRequest extends IAction {

@@ -1,15 +1,25 @@
-.wrap,
+.err,
+.noerr,
 .emptyWrap {
   height: 60px;
   padding: 15px;
-}
-
-.wrap {
-  background-color: rgb(253, 177, 177);
   border-radius: 12px;
   h2 {
-    color: rgb(119, 4, 4);
     margin: 0;
+  }
+}
+
+.err {
+  background-color: rgb(253, 177, 177);
+  h2 {
+    color: rgb(119, 4, 4);
+  }
+}
+
+.noerr {
+  background-color: #b1fdd7;
+  h2 {
+    color: rgb(50, 0, 187);
   }
 }
 
@@ -18,7 +28,8 @@
     height: 0px;
     padding: 0px;
   }
-  .wrap {
+  .err,
+  .noerr {
     height: auto;
     padding: 15px;
     font-size: 16px;

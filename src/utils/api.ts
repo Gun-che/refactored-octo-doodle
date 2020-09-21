@@ -14,11 +14,11 @@ class Api {
     return this._tmp.get('/')
   }
 
-  get = (id: number): Promise<any> => {
+  get = (id: string): Promise<any> => {
     return this._tmp.get(`/${id}`)
   }
 
-  post = ({ id, name, comment }: { id: number, name: string, comment: string }): Promise<any> => {
+  post = ({ id, name, comment }: { id: string, name: string, comment: string }): Promise<any> => {
     return this._tmp.post(`/${id}/comments`, {
       name: name,
       comment: comment,

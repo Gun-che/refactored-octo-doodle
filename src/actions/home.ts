@@ -15,7 +15,7 @@ export const createHomeDataRequest = (): IAction => ({
   type: HOME_DATA_REQUEST,
 })
 
-export const createHomeDataItemRequest = (payload: { id: number }): IHomeDataItemRequest => ({
+export const createHomeDataItemRequest = (payload: { id: string }): IHomeDataItemRequest => ({
   type: HOME_DATA_ITEM_REQUEST,
   payload,
 })

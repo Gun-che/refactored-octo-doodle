@@ -1,4 +1,4 @@
-import { IResponse, IResponseOne } from "./response";
+import { IResponse, IResponseData } from "./response";
 
 export interface IState {
   isFetching: boolean;
@@ -12,7 +12,7 @@ export interface IStoreState {
 
 export type IStateItem = {
   isFetching: boolean;
-  data: IResponseOne;
+  data: IResponseData;
   message: string;
 }
 

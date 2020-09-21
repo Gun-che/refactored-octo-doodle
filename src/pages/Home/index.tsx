@@ -16,7 +16,7 @@ export const HomePage: React.FC<HomePagePropsFromRedux> = ({
   current,
 }) => {
   return (
-    <div className={s.wrap}>
+    <div className={s.wrap + " containerCust"}>
       <Switch>
         <Route path={process.env.PUBLIC_URL + '/'} exact>
           <Main
